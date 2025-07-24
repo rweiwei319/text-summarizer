@@ -3,7 +3,7 @@
   <head>
     <title>Text Summarizer</title>
   </head>
-  <body>
+  </body>
     <h2>Summarize Your Notes</h2>
     <form action="/summarize"method="post">
       <textarea name="text" rows="10" cols="60" placeholder="Paste your text here..."></textarea><br><br><button
