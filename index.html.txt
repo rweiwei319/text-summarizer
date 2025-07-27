@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Text Summarizer</title>
-  </head>
-  </body>
-    <h2>Summarize Your Notes</h2>
-    <form action="/summarize"method="post">
-      <textarea name="text" rows="10" cols="60" placeholder="Paste your text here..."></textarea><br><br><button
-      type="submit">Summatize</button>
-      </form>
-      
-      {% if summary %}
-      <h3>Summary:</h3>
-      <p>{{summary}}</p>
-      {% endif %}
-      </body>
-      </html>
-      
+<head>
+  <title>Text Summarizer</title>
+  <style>
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Summarizer</h1>
+  <p>Paste your text here:</p>
+  <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+  <br><br>
+  <button onclick="summarizeText()">Summarize</button>
+
+  <p id="result"></p>
+
+  <script>
+    function summarizeText() {
+      let input = document.getElementById("inputText").value;
+
+      // Basic summary logic: return first 2 sentences
+      let sentences = input.split(".").filter(s => s.trim().length > 0);
+      let summary = sentences.slice(0, 2).join(". ") + ".";
+
+      document.getElementById("result").innerText = "Summary:\n" + summary;
+    }
+  </script>
+</body>
+</html>
