@@ -1,9 +1,3 @@
-<textarea id="inputText" placeholder="Paste your text here..."></textarea>
-<br><br>
-<button onclick="sendToBackend()">Summarize</button>
-
-<p id="result"></p>
-
 <script>
   async function sendToBackend() {
     const input = document.getElementById("inputText").value;
